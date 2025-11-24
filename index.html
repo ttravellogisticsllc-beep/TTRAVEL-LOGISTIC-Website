@@ -110,10 +110,6 @@
       justify-content: space-between;
     }
 
-    .contact-strip span {
-      opacity: 0.9;
-    }
-
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -127,10 +123,6 @@
       margin-bottom: 24px;
       border: 1px solid var(--border-soft);
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-    }
-
-    .section-header {
-      margin-bottom: 12px;
     }
 
     h1, h2, h3 {
@@ -194,7 +186,7 @@
       color: var(--silver);
     }
 
-    .van-card {
+    .logo-card {
       background: radial-gradient(circle at top, #163b57, #091a2d);
       border-radius: 14px;
       padding: 14px;
@@ -202,23 +194,11 @@
       text-align: center;
     }
 
-    .van-card h3 {
-      font-size: 16px;
-      margin-bottom: 4px;
-    }
-
-    .van-card p {
-      font-size: 13px;
-    }
-
-    .van-img {
+    .logo-img {
       width: 100%;
-      max-width: 360px;
-      border-radius: 10px;
-      margin-top: 10px;
+      max-width: 320px;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
 
     .two-col {
@@ -262,7 +242,7 @@
       margin-bottom: 4px;
     }
 
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       padding: 10px 11px;
       border-radius: 8px;
@@ -273,7 +253,7 @@
       outline: none;
     }
 
-    input:focus, textarea:focus {
+    input:focus, textarea:focus, select:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px rgba(25, 179, 122, 0.6);
     }
@@ -357,13 +337,52 @@
       const company = document.getElementById("company").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const email = document.getElementById("email").value.trim();
-      const pu = document.getElementById("pickup").value.trim();
-      const del = document.getElementById("delivery").value.trim();
+      const pickupAddress = document.getElementById("pickup").value.trim();
+      const pickupCity = document.getElementById("pickupCity").value.trim();
+      const deliveryAddress = document.getElementById("delivery").value.trim();
+      const deliveryCity = document.getElementById("deliveryCity").value.trim();
+      const pickupWindow = document.getElementById("pickupWindow").value;
+      const pickupDate = document.getElementById("pickupDate").value;
       const details = document.getElementById("details").value.trim();
 
-      if (!name || !phone || !pu || !del) {
+      // Basic required fields
+      if (!name || !phone || !pickupAddress || !deliveryAddress) {
         alert("Please fill in your name, phone number, pickup address, and delivery address.");
         return;
+      }
+
+      // Phone: numbers only
+      const phonePattern = /^[0-9]{7,15}$/;
+      if (!phonePattern.test(phone)) {
+        alert("Please enter numbers only for the best call back number (no spaces or symbols).");
+        return;
+      }
+
+      // Email: if provided, must look like a real address
+      if (email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+      }
+
+      // Cities: letters and spaces only
+      const cityPattern = /^[A-Za-z\s]*$/;
+      if (pickupCity && !cityPattern.test(pickupCity)) {
+        alert("Pickup city should contain letters only.");
+        return;
+      }
+      if (deliveryCity && !cityPattern.test(deliveryCity)) {
+        alert("Delivery city should contain letters only.");
+        return;
+      }
+
+      // Optional helpful checks
+      if (!pickupDate) {
+        if (!confirm("You did not pick a date. Send this request without a date selected?")) {
+          return;
+        }
       }
 
       const body =
@@ -372,8 +391,12 @@
         "Company: " + company + "\n" +
         "Phone: " + phone + "\n" +
         "Email: " + email + "\n" +
-        "Pickup: " + pu + "\n" +
-        "Delivery: " + del + "\n" +
+        "Pickup address: " + pickupAddress + "\n" +
+        "Pickup city: " + pickupCity + "\n" +
+        "Delivery address: " + deliveryAddress + "\n" +
+        "Delivery city: " + deliveryCity + "\n" +
+        "Pickup window: " + pickupWindow + "\n" +
+        "Pickup date: " + pickupDate + "\n" +
         "Details: " + details;
 
       window.location.href =
@@ -398,7 +421,6 @@
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#rates">Rates</a></li>
-          <li><a href="#coverage">Coverage</a></li>
           <li><a href="#request">Request pickup</a></li>
         </ul>
       </nav>
@@ -416,16 +438,15 @@
 
   <main class="container">
 
-    <!-- HERO -->
+    <!-- HERO WITH LOGO -->
     <section class="section" id="top">
       <div class="hero">
         <div>
           <span class="hero-tag">Dedicated cargo van carrier</span>
           <h1 class="hero-title">Delivering reliability one mile at a time</h1>
           <p>
-            TTravel Logistics LLC is a cargo van carrier built for urgent freight and local support.
-            We move auto parts, medical freight, dealership transfers, and time sensitive materials
-            with a 2024 RAM ProMaster and simple, transparent pricing.
+            TTravel Logistics LLC moves auto parts, medical freight, dealership transfers,
+            and time sensitive materials with a 2024 RAM ProMaster and simple, clear pricing.
           </p>
 
           <div class="hero-highlights">
@@ -439,25 +460,21 @@
             </div>
             <div class="hero-pill">
               <strong>Speed</strong>
-              Same day hot shot options when every minute counts
+              Same day hot shot options when every minute matters
             </div>
           </div>
         </div>
 
-        <div class="van-card">
-          <h3>Dedicated 2024 RAM ProMaster</h3>
-          <p>Perfect for auto parts, medical freight, and light industrial material.</p>
-          <img class="van-img" src="https://i.imgur.com/7U9h0oR.png" alt="TTravel Logistics cargo van">
+        <div class="logo-card">
+          <img class="logo-img" src="logo-ttravel.png" alt="TTravel Logistics LLC logo">
         </div>
       </div>
     </section>
 
     <!-- SERVICES -->
     <section class="section" id="services">
-      <div class="section-header">
-        <h2>What we move</h2>
-        <p>One van, one driver, and a clear point of contact for every load.</p>
-      </div>
+      <h2>What we move</h2>
+      <p>One van, one driver, and a clear point of contact for every load.</p>
 
       <div class="two-col">
         <div class="col">
@@ -485,10 +502,8 @@
 
     <!-- RATE SHEET -->
     <section class="section" id="rates">
-      <div class="section-header">
-        <h2>Cargo van rate sheet</h2>
-        <p>Straightforward pricing for local and regional freight.</p>
-      </div>
+      <h2>Cargo van rate sheet</h2>
+      <p>Straightforward pricing for local and regional freight.</p>
 
       <div class="two-col">
         <div class="col rates-table">
@@ -499,7 +514,7 @@
           <p>Mileage from pickup to delivery.</p>
 
           <p><strong>After hours fee:</strong> 33 dollars</p>
-          <p>Trips outside 7 AM to 5 PM.</p>
+          <p>Trips outside 7 in the morning to 5 in the afternoon.</p>
 
           <p><strong>Weekend fee:</strong> 53 dollars</p>
           <p>Saturday and Sunday work.</p>
@@ -524,35 +539,17 @@
           <span class="badge">Urgent repair services</span>
 
           <p style="margin-top: 10px;">
-            Share your pickup and delivery details and we will confirm the total
-            rate before we roll. No guessing and no surprise add ons after the fact.
+            Share your pickup and delivery details and the rate will be confirmed
+            before the van rolls. No guessing after the freight is loaded.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- COVERAGE -->
-    <section class="section" id="coverage">
-      <div class="section-header">
-        <h2>Coverage and focus</h2>
-        <p>Based near Green Bay with flexibility for regional runs.</p>
-      </div>
-      <p>
-        TTravel Logistics LLC is positioned to support routes in and around the Green Bay area,
-        with capacity for regional trips when they make sense for your freight and timeline.
-      </p>
-      <p class="rates-note">
-        If you have a recurring route or dedicated lane in mind, include that detail
-        in your request and we will follow up with options.
-      </p>
-    </section>
-
     <!-- REQUEST FORM -->
     <section class="section" id="request">
-      <div class="section-header">
-        <h2>Request a pickup</h2>
-        <p>Send your details and we will respond with confirmation.</p>
-      </div>
+      <h2>Request a pickup</h2>
+      <p>Send your details and we will respond with confirmation.</p>
 
       <form onsubmit="event.preventDefault(); sendRequest();">
         <label for="name">Your name *</label>
@@ -561,20 +558,35 @@
         <label for="company">Company</label>
         <input id="company" placeholder="Company name (optional)">
 
-        <label for="phone">Best call back number *</label>
-        <input id="phone" placeholder="Phone number" required>
+        <label for="phone">Best call back number (numbers only) *</label>
+        <input id="phone" type="tel" placeholder="For example 3129856760" required>
 
         <label for="email">Email address</label>
-        <input id="email" type="email" placeholder="Your email">
+        <input id="email" type="email" placeholder="you@example.com">
 
         <label for="pickup">Pickup address *</label>
-        <textarea id="pickup" placeholder="Business name, street, city, state, zip" required></textarea>
+        <textarea id="pickup" placeholder="Business name, street, state, and zip" required></textarea>
+
+        <label for="pickupCity">Pickup city (letters only)</label>
+        <input id="pickupCity" placeholder="City">
 
         <label for="delivery">Delivery address *</label>
-        <textarea id="delivery" placeholder="Business name, street, city, state, zip" required></textarea>
+        <textarea id="delivery" placeholder="Business name, street, state, and zip" required></textarea>
+
+        <label for="deliveryCity">Delivery city (letters only)</label>
+        <input id="deliveryCity" placeholder="City">
+
+        <label for="pickupWindow">Pickup window</label>
+        <select id="pickupWindow">
+          <option value="7 AM to 5 PM" selected>7 in the morning to 5 in the afternoon</option>
+          <option value="After 5 PM (after hours)">After 5 in the afternoon (after hours)</option>
+        </select>
+
+        <label for="pickupDate">Pickup date</label>
+        <input id="pickupDate" type="date">
 
         <label for="details">Freight details</label>
-        <textarea id="details" placeholder="Weight, pieces, pallet count, equipment, timing, and any special handling needs."></textarea>
+        <textarea id="details" placeholder="Weight, pieces, pallet count, timing, and any special handling needs."></textarea>
 
         <button type="submit" class="button">
           Send request
