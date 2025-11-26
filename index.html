@@ -3,611 +3,486 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TTravel Logistics LLC</title>
+  <title>TTravel Logistics LLC | Green Bay Cargo Van Delivery</title>
+
+  <meta name="description" content="TTravel Logistics LLC provides same day cargo van delivery in Green Bay and across the Midwest, specializing in urgent freight, small pallet loads, and local business routes within one hundred fifty miles of Green Bay.">
+  <meta name="keywords" content="Green Bay delivery services, cargo van delivery Green Bay, same day delivery Green Bay, urgent freight Green Bay, small pallet loads, local business routes, Midwest courier, cargo van service">
 
   <style>
     :root {
-      --bg-main: #071726;
-      --bg-section: #0f2236;
-      --bg-header: #0b2134;
-      --accent: #19b37a;
-      --accent-soft: #1f8ba0;
-      --border-soft: #1d3955;
-      --text-main: #ffffff;
-      --text-soft: #c7d2df;
-      --silver: #d0d7df;
+      --bg-main: #020b1a;
+      --bg-section: #071726;
+      --bg-header: #050f1f;
+      --accent-green: #2ecc71;
+      --accent-silver: #c0c0c0;
+      --text-main: #f5f5f5;
+      --text-muted: #b0c4de;
+      --heading-light: #e0f0ff;
+      --max-width: 1100px;
+      --border-radius: 8px;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, #16385a 0%, #040916 55%, #02050b 100%);
+      background-color: var(--bg-main);
       color: var(--text-main);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     header {
-      background: linear-gradient(90deg, #0b2134, #113a5a);
-      border-bottom: 1px solid #1c3e60;
+      background-color: var(--bg-header);
+      border-bottom: 1px solid var(--accent-silver);
       position: sticky;
       top: 0;
       z-index: 10;
     }
 
-    .header-inner {
-      max-width: 1100px;
+    .nav-container {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 16px 20px;
+      padding: 0.75rem 1.5rem;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
     }
 
-    .brand-block {
+    .brand {
       display: flex;
       flex-direction: column;
-      gap: 4px;
     }
 
-    .brand-title {
-      font-size: 22px;
+    .brand-name {
+      font-size: 1.4rem;
       font-weight: bold;
-      letter-spacing: 2px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--heading-light);
     }
 
-    .brand-sub {
-      font-size: 13px;
-      color: var(--text-soft);
+    .brand-tagline {
+      font-size: 0.9rem;
+      color: var(--accent-silver);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 16px;
-      padding: 0;
-      margin: 0;
-      font-size: 14px;
+      gap: 1rem;
     }
 
     nav a {
-      padding: 6px 10px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
       border-radius: 999px;
       border: 1px solid transparent;
-      font-weight: 500;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
 
     nav a:hover {
-      border-color: var(--accent-soft);
-      background: rgba(10, 197, 140, 0.08);
+      background-color: var(--accent-green);
+      color: #021018;
+      border-color: var(--accent-green);
     }
 
-    .contact-strip {
-      width: 100%;
-      background: #06131f;
-      border-bottom: 1px solid #102338;
+    main {
+      max-width: var(--max-width);
+      margin: 1.75rem auto 3rem auto;
+      padding: 0 1.5rem;
     }
 
-    .contact-strip-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 6px 20px 10px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13px;
-      color: var(--silver);
-      justify-content: space-between;
+    section {
+      margin-bottom: 2.5rem;
+      background-color: var(--bg-section);
+      border-radius: var(--border-radius);
+      padding: 1.75rem 1.5rem;
+      border: 1px solid rgba(192, 192, 192, 0.15);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 20px 40px 20px;
+    section h1,
+    section h2 {
+      margin-bottom: 0.75rem;
+      color: var(--heading-light);
     }
 
-    .section {
-      background: rgba(8, 25, 45, 0.95);
-      padding: 22px 20px;
-      border-radius: 14px;
-      margin-bottom: 24px;
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 8px 0;
-      letter-spacing: 1px;
-    }
-
-    h2 {
-      font-size: 20px;
-      border-left: 4px solid var(--accent);
-      padding-left: 10px;
-    }
-
-    p {
-      margin: 4px 0 8px 0;
-      color: var(--text-soft);
-      font-size: 15px;
+    section p {
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
-      gap: 24px;
-      align-items: center;
+      text-align: left;
     }
 
-    .hero-tag {
-      display: inline-block;
-      padding: 4px 10px;
-      font-size: 12px;
-      border-radius: 999px;
-      border: 1px solid var(--accent-soft);
-      background: rgba(10, 197, 140, 0.08);
-      color: var(--silver);
-      margin-bottom: 8px;
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
 
-    .hero-title {
-      font-size: 28px;
-      margin-bottom: 10px;
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
     }
 
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-      margin-top: 10px;
+    .hero-highlight {
+      color: var(--accent-green);
+      font-weight: bold;
     }
 
-    .hero-pill {
-      padding: 10px 12px;
-      border-radius: 10px;
-      background: rgba(16, 39, 61, 0.95);
-      border: 1px solid #214567;
-      font-size: 14px;
-    }
-
-    .hero-pill strong {
-      display: block;
-      font-size: 13px;
-      color: var(--silver);
-    }
-
-    .logo-card {
-      background: radial-gradient(circle at top, #163b57, #091a2d);
-      border-radius: 14px;
-      padding: 14px;
-      border: 1px solid #1b3c5a;
-      text-align: center;
-    }
-
-    .logo-img {
-      width: 100%;
-      max-width: 320px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .two-col {
+    .hero-cta {
+      margin-top: 1.25rem;
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 0.75rem;
     }
 
-    .col {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .rates-table p {
-      margin: 6px 0;
-      font-size: 15px;
-    }
-
-    .rates-note {
-      font-size: 13px;
-      color: var(--silver);
-      margin-top: 10px;
-    }
-
-    .badge {
+    .btn-primary {
       display: inline-block;
-      font-size: 11px;
-      padding: 4px 8px;
+      padding: 0.7rem 1.4rem;
       border-radius: 999px;
-      border: 1px solid #314f73;
-      margin-right: 4px;
-      margin-bottom: 4px;
-      color: var(--silver);
+      background-color: var(--accent-green);
+      color: #021018;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid var(--accent-green);
+      font-size: 0.95rem;
+      text-align: center;
+      transition: background-color 0.2s ease, transform 0.1s ease;
     }
 
-    form label {
-      display: block;
-      font-size: 13px;
-      color: var(--silver);
-      margin-top: 10px;
-      margin-bottom: 4px;
+    .btn-primary:hover {
+      background-color: #27b864;
+      transform: translateY(-1px);
     }
 
-    input, textarea, select {
-      width: 100%;
-      padding: 10px 11px;
-      border-radius: 8px;
-      border: 1px solid #233a55;
-      font-size: 15px;
-      background: #071221;
+    .btn-outline {
+      display: inline-block;
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      background-color: transparent;
+      color: var(--accent-green);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid var(--accent-green);
+      text-align: center;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--accent-green);
+      color: #021018;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      color: var(--accent-silver);
+      border: 1px solid rgba(192, 192, 192, 0.4);
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    .services-list {
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+
+    .services-list li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
       color: var(--text-main);
-      outline: none;
     }
 
-    input:focus, textarea:focus, select:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(25, 179, 122, 0.6);
+    .services-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-green);
+    }
+
+    .key-line {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: var(--accent-silver);
+    }
+
+    .about-text p {
+      margin-bottom: 0.85rem;
+    }
+
+    .contact-highlight {
+      margin-bottom: 1.25rem;
+      padding: 1.25rem 1rem;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--accent-green);
+      background-color: #040f1f;
+    }
+
+    .contact-phone {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-phone a {
+      text-decoration: none;
+      color: var(--accent-green);
+    }
+
+    .contact-email {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-email a {
+      text-decoration: none;
+      color: var(--heading-light);
+    }
+
+    .contact-details {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-quote {
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--accent-silver);
+      font-weight: bold;
+    }
+
+    .hours {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    form {
+      margin-top: 1.25rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: 1px solid rgba(192, 192, 192, 0.4);
+      background-color: #020b1a;
+      color: var(--text-main);
+      font-size: 0.95rem;
     }
 
     textarea {
-      min-height: 70px;
+      min-height: 110px;
       resize: vertical;
     }
 
-    .button {
-      margin-top: 16px;
-      padding: 13px 22px;
-      background: var(--accent);
-      border: none;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: 600;
-      color: white;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 12px 25px rgba(12, 184, 116, 0.4);
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 30px rgba(12, 184, 116, 0.55);
-    }
-
-    .note {
-      font-size: 12px;
-      color: var(--silver);
-      margin-top: 6px;
-      opacity: 0.85;
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent-green);
+      box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.4);
     }
 
     footer {
-      border-top: 1px solid #142639;
-      padding: 14px 20px 24px 20px;
-      background: #050b13;
-      color: var(--silver);
-      font-size: 12px;
+      border-top: 1px solid rgba(192, 192, 192, 0.25);
+      padding: 1.25rem 1.5rem 1.75rem 1.5rem;
+      background-color: var(--bg-header);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
     }
 
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .header-inner {
-        justify-content: center;
-        text-align: center;
+    @media (max-width: 700px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
       }
 
       nav ul {
-        justify-content: center;
+        width: 100%;
+        justify-content: flex-start;
         flex-wrap: wrap;
       }
 
-      .contact-strip-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .hero h1 {
+        font-size: 1.6rem;
       }
     }
   </style>
-
-  <script>
-    function sendRequest() {
-      const name = document.getElementById("name").value.trim();
-      const company = document.getElementById("company").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const pickupAddress = document.getElementById("pickup").value.trim();
-      const pickupCity = document.getElementById("pickupCity").value.trim();
-      const deliveryAddress = document.getElementById("delivery").value.trim();
-      const deliveryCity = document.getElementById("deliveryCity").value.trim();
-      const pickupWindow = document.getElementById("pickupWindow").value;
-      const pickupDate = document.getElementById("pickupDate").value;
-      const details = document.getElementById("details").value.trim();
-
-      // Basic required fields
-      if (!name || !phone || !pickupAddress || !deliveryAddress) {
-        alert("Please fill in your name, phone number, pickup address, and delivery address.");
-        return;
-      }
-
-      // Phone: numbers only
-      const phonePattern = /^[0-9]{7,15}$/;
-      if (!phonePattern.test(phone)) {
-        alert("Please enter numbers only for the best call back number (no spaces or symbols).");
-        return;
-      }
-
-      // Email: if provided, must look like a real address
-      if (email) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          alert("Please enter a valid email address.");
-          return;
-        }
-      }
-
-      // Cities: letters and spaces only
-      const cityPattern = /^[A-Za-z\s]*$/;
-      if (pickupCity && !cityPattern.test(pickupCity)) {
-        alert("Pickup city should contain letters only.");
-        return;
-      }
-      if (deliveryCity && !cityPattern.test(deliveryCity)) {
-        alert("Delivery city should contain letters only.");
-        return;
-      }
-
-      // Optional helpful checks
-      if (!pickupDate) {
-        if (!confirm("You did not pick a date. Send this request without a date selected?")) {
-          return;
-        }
-      }
-
-      const body =
-        "Pickup Request Details:\n\n" +
-        "Name: " + name + "\n" +
-        "Company: " + company + "\n" +
-        "Phone: " + phone + "\n" +
-        "Email: " + email + "\n" +
-        "Pickup address: " + pickupAddress + "\n" +
-        "Pickup city: " + pickupCity + "\n" +
-        "Delivery address: " + deliveryAddress + "\n" +
-        "Delivery city: " + deliveryCity + "\n" +
-        "Pickup window: " + pickupWindow + "\n" +
-        "Pickup date: " + pickupDate + "\n" +
-        "Details: " + details;
-
-      window.location.href =
-        "mailto:ttravellogisticsllc@gmail.com" +
-        "?subject=" + encodeURIComponent("Delivery Request") +
-        "&body=" + encodeURIComponent(body);
-    }
-  </script>
 </head>
-
 <body>
-
-  <!-- HEADER + NAV -->
   <header>
-    <div class="header-inner">
-      <div class="brand-block">
-        <div class="brand-title">TTRAVEL LOGISTICS LLC</div>
-        <div class="brand-sub">Cargo van delivery • Auto parts • Medical • Light freight</div>
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-name">TTravel Logistics LLC</span>
+        <span class="brand-tagline">Reliability one mile at a time</span>
       </div>
-
       <nav>
         <ul>
+          <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#rates">Rates</a></li>
-          <li><a href="#request">Request pickup</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- CONTACT STRIP -->
-  <div class="contact-strip">
-    <div class="contact-strip-inner">
-      <span>MC 1741039 • DOT 4426346</span>
-      <span>Call or text: <strong>312-985-6760</strong></span>
-      <span>Email: <strong>ttravellogisticsllc@gmail.com</strong></span>
-    </div>
-  </div>
-
-  <main class="container">
-
-    <!-- HERO WITH LOGO -->
-    <section class="section" id="top">
-      <div class="hero">
-        <div>
-          <span class="hero-tag">Dedicated cargo van carrier</span>
-          <h1 class="hero-title">Delivering reliability one mile at a time</h1>
-          <p>
-            TTravel Logistics LLC moves auto parts, medical freight, dealership transfers,
-            and time sensitive materials with a 2024 RAM ProMaster and simple, clear pricing.
-          </p>
-
-          <div class="hero-highlights">
-            <div class="hero-pill">
-              <strong>Capacity</strong>
-              2024 RAM ProMaster, 2,500 lb cargo capacity
-            </div>
-            <div class="hero-pill">
-              <strong>Service</strong>
-              Local and regional runs with direct driver contact
-            </div>
-            <div class="hero-pill">
-              <strong>Speed</strong>
-              Same day hot shot options when every minute matters
-            </div>
-          </div>
-        </div>
-
-        <div class="logo-card">
-          <img class="logo-img" src="logo-ttravel.png" alt="TTravel Logistics LLC logo">
-        </div>
+  <main>
+    <!-- Home -->
+    <section id="home" class="hero">
+      <h1>Green Bay cargo van delivery you can count on</h1>
+      <p class="hero-subtitle">
+        TTravel Logistics LLC provides fast, same day cargo van delivery for local businesses in Green Bay and across the Midwest.
+        We handle urgent freight, small pallet loads, auto parts, and time sensitive routes within one hundred fifty miles of Green Bay in each direction.
+      </p>
+      <p>
+        When your load has to move today, you need a carrier that picks up on time, communicates clearly, and delivers like your reputation is in the van.
+        That is how we run every mile.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Request a same day quote</a>
+        <a href="#services" class="btn-outline">View delivery services</a>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Green Bay delivery services</span>
+        <span class="tag">Same day cargo van delivery</span>
+        <span class="tag">Urgent freight and hot shot loads</span>
+        <span class="tag">Local business routes across the Midwest</span>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="services">
-      <h2>What we move</h2>
-      <p>One van, one driver, and a clear point of contact for every load.</p>
-
-      <div class="two-col">
-        <div class="col">
-          <h3>Common freight</h3>
-          <p>We support distributors, dealers, and local businesses with:</p>
-          <ul>
-            <li>Auto parts and dealer to dealer transfers</li>
-            <li>Medical supplies, samples, and durable equipment</li>
-            <li>Urgent industrial parts and repair items</li>
-            <li>Diagnostic tools and secure boxed freight</li>
-          </ul>
-        </div>
-
-        <div class="col">
-          <h3>How we operate</h3>
-          <p>Simple, direct communication on every run:</p>
-          <ul>
-            <li>Direct line to the driver from pickup to delivery</li>
-            <li>Photo confirmation available at delivery</li>
-            <li>Transparent rate sheet with no surprise fees</li>
-          </ul>
-        </div>
-      </div>
+    <!-- Services -->
+    <section id="services">
+      <h2>Services</h2>
+      <p>
+        We focus on cargo van delivery for businesses that need reliable, same day movement of freight in and around Green Bay.
+        Our home base is Green Bay Wisconsin, and we serve customers across the Midwest.
+      </p>
+      <ul class="services-list">
+        <li><strong>Same day cargo van delivery</strong> within one hundred fifty miles of Green Bay in each direction.</li>
+        <li><strong>Urgent freight and time critical loads</strong> when your parts or product cannot sit on the dock.</li>
+        <li><strong>Small pallet loads and LTL style shipments</strong> that move better in a cargo van than in a full truck.</li>
+        <li><strong>Dealer to dealer and parts runs</strong> for auto shops, service centers, and dealerships.</li>
+        <li><strong>Local business routes</strong> for regular store runs, supplier to customer deliveries, and recurring stops.</li>
+        <li><strong>Dedicated and short term routes</strong> when you need the same van running the same plan for your team.</li>
+      </ul>
+      <p class="key-line">
+        Cargo van capacity up to three thousand two hundred pounds, sized for tight docks, busy lots, and city streets.
+      </p>
+      <p class="key-line">
+        Contact us for a custom quote based on mileage, load size, labor needs, and urgency.
+      </p>
     </section>
 
-    <!-- RATE SHEET -->
-    <section class="section" id="rates">
-      <h2>Cargo van rate sheet</h2>
-      <p>Straightforward pricing for local and regional freight.</p>
-
-      <div class="two-col">
-        <div class="col rates-table">
-          <p><strong>Base rate:</strong> 63 dollars minimum</p>
-          <p>Applies to every delivery.</p>
-
-          <p><strong>Mileage rate:</strong> 2.13 dollars per loaded mile</p>
-          <p>Mileage from pickup to delivery.</p>
-
-          <p><strong>After hours fee:</strong> 33 dollars</p>
-          <p>Trips outside 7 in the morning to 5 in the afternoon.</p>
-
-          <p><strong>Weekend fee:</strong> 53 dollars</p>
-          <p>Saturday and Sunday work.</p>
-
-          <p><strong>Holiday fee:</strong> 95 dollars</p>
-
-          <p><strong>Hot shot or rush fee:</strong> 40 dollars</p>
-          <p>Immediate or same hour pickups.</p>
-
-          <p class="rates-note">
-            Final pricing may include tolls, waiting time, or special handling
-            when needed. All details are confirmed before the load is booked.
-          </p>
-        </div>
-
-        <div class="col">
-          <h3>Ideal for</h3>
-          <span class="badge">Dealerships</span>
-          <span class="badge">Auto parts distributors</span>
-          <span class="badge">Medical offices</span>
-          <span class="badge">Local manufacturers</span>
-          <span class="badge">Urgent repair services</span>
-
-          <p style="margin-top: 10px;">
-            Share your pickup and delivery details and the rate will be confirmed
-            before the van rolls. No guessing after the freight is loaded.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- REQUEST FORM -->
-    <section class="section" id="request">
-      <h2>Request a pickup</h2>
-      <p>Send your details and we will respond with confirmation.</p>
-
-      <form onsubmit="event.preventDefault(); sendRequest();">
-        <label for="name">Your name *</label>
-        <input id="name" placeholder="Full name" required>
-
-        <label for="company">Company</label>
-        <input id="company" placeholder="Company name (optional)">
-
-        <label for="phone">Best call back number (numbers only) *</label>
-        <input id="phone" type="tel" placeholder="For example 3129856760" required>
-
-        <label for="email">Email address</label>
-        <input id="email" type="email" placeholder="you@example.com">
-
-        <label for="pickup">Pickup address *</label>
-        <textarea id="pickup" placeholder="Business name, street, state, and zip" required></textarea>
-
-        <label for="pickupCity">Pickup city (letters only)</label>
-        <input id="pickupCity" placeholder="City">
-
-        <label for="delivery">Delivery address *</label>
-        <textarea id="delivery" placeholder="Business name, street, state, and zip" required></textarea>
-
-        <label for="deliveryCity">Delivery city (letters only)</label>
-        <input id="deliveryCity" placeholder="City">
-
-        <label for="pickupWindow">Pickup window</label>
-        <select id="pickupWindow">
-          <option value="7 AM to 5 PM" selected>7 in the morning to 5 in the afternoon</option>
-          <option value="After 5 PM (after hours)">After 5 in the afternoon (after hours)</option>
-        </select>
-
-        <label for="pickupDate">Pickup date</label>
-        <input id="pickupDate" type="date">
-
-        <label for="details">Freight details</label>
-        <textarea id="details" placeholder="Weight, pieces, pallet count, timing, and any special handling needs."></textarea>
-
-        <button type="submit" class="button">
-          Send request
-        </button>
-        <p class="note">
-          Your information is used only to schedule and complete your delivery request.
+    <!-- About Us -->
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="about-text">
+        <p>
+          TTravel Logistics LLC is an independent cargo van carrier based in Green Bay Wisconsin.
+          We built this company to give shippers and local businesses a simple option for fast, reliable delivery without the headache of a full truck.
         </p>
+        <p>
+          Our focus is same day service within one hundred fifty miles of Green Bay in each direction, with the flexibility to support customers across the wider Midwest.
+          From urgent repair parts and small pallet loads to scheduled store runs, we move the freight that keeps your day on track.
+        </p>
+        <p>
+          Communication sits at the center of how we operate.
+          You know when we pick up, when we are on the road, and when we deliver.
+          Your freight rides in a clean, well maintained cargo van with a professional driver who treats every stop with respect.
+        </p>
+        <p>
+          Whether you are a small business owner, a parts manager, or a shipping coordinator, you get the same promise:
+          clear updates, honest expectations, and freight delivered with care, one mile at a time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <div class="contact-highlight">
+        <p class="contact-phone">
+          Call or text: <a href="tel:13129856760">312 985 6760</a>
+        </p>
+        <p class="contact-email">
+          Email: <a href="mailto:ttravellogisticsllc@gmail.com">ttravellogisticsllc@gmail.com</a>
+        </p>
+        <p class="contact-details">
+          Service area: Based in Green Bay Wisconsin, serving customers across the Midwest.
+        </p>
+        <p class="contact-details">
+          Van capacity: Cargo van with up to three thousand two hundred pounds of usable capacity.
+        </p>
+        <p class="hours">
+          Standard hours: 7 am to 5 pm Central, with availability for urgent loads outside regular hours.
+        </p>
+        <p class="contact-quote">
+          Contact us for a quote today.
+        </p>
+        <p class="contact-quote">
+          Contact us for a custom quote based on mileage, load size, labor needs, and urgency.
+        </p>
+      </div>
+
+      <form>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" placeholder="Your name">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com">
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" name="phone" placeholder="Numbers only">
+        </div>
+        <div>
+          <label for="locations">Pickup and delivery city</label>
+          <input id="locations" type="text" name="locations" placeholder="City and state for pickup and delivery">
+        </div>
+        <div>
+          <label for="details">Load details</label>
+          <textarea id="details" name="details" placeholder="Tell us about your freight, timing, and any special needs"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send request</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <div class="footer-inner">
-      <span>© <span id="year"></span> TTravel Logistics LLC. All rights reserved.</span>
-      <span>MC 1741039 • DOT 4426346</span>
-    </div>
+    <p>TTravel Logistics LLC · Green Bay cargo van delivery · Same day freight across the Midwest</p>
   </footer>
-
-  <script>
-    // Set the footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
