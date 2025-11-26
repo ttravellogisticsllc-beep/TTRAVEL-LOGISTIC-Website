@@ -6,14 +6,15 @@
   <title>TTravel Logistics LLC | Green Bay Cargo Van Delivery</title>
 
   <meta name="description" content="TTravel Logistics LLC provides same day cargo van delivery in Green Bay and across the Midwest, specializing in urgent freight, small pallet loads, and local business routes within one hundred fifty miles of Green Bay.">
-  <meta name="keywords" content="cargo van delivery Green Bay, same day delivery Green Bay, hot shot courier Wisconsin, expedited delivery Green Bay WI, freight courier near me, local delivery service Green Bay, 2500 lb cargo van service, small pallet delivery Green Bay, parts transfer courier Wisconsin, plant to plant delivery Green Bay, pickup and delivery courier Green Bay, urgent freight service Wisconsin, business delivery service Green Bay, commercial courier Green Bay, van-based freight service, reliable courier Wisconsin, on-time delivery service Green Bay, Green Bay Wisconsin, Brown County WI, Appleton WI, De Pere WI, Ashwaubenon WI">
+  <meta name="keywords" content="cargo van delivery Green Bay, same day delivery Green Bay, hot shot courier Wisconsin, expedited delivery Green Bay WI, freight courier near me, local delivery service Green Bay, 2500 lb cargo van service, small pallet delivery Green Bay, parts transfer courier Wisconsin, plant to plant delivery Green Bay, pickup and delivery courier Green Bay, urgent freight service Wisconsin, business delivery service Green Bay, commercial courier Green Bay, van-based freight service, reliable courier Wisconsin, on time delivery service Green Bay, Green Bay Wisconsin, Brown County WI, Appleton WI, De Pere WI, Ashwaubenon WI">
 
   <style>
     :root {
-      --bg-main: #020b1a;
+      --bg-main: #020814;
       --bg-section: #071726;
       --bg-header: #050f1f;
       --accent-green: #2ecc71;
+      --accent-green-deep: #1e8f4d;
       --accent-silver: #c0c0c0;
       --text-main: #f5f5f5;
       --text-muted: #b0c4de;
@@ -37,10 +38,11 @@
 
     header {
       background-color: var(--bg-header);
-      border-bottom: 1px solid var(--accent-silver);
+      border-bottom: 3px solid var(--accent-green-deep);
       position: sticky;
       top: 0;
       z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     }
 
     .nav-container {
@@ -63,10 +65,20 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--heading-light);
+      text-shadow: 0 0 6px rgba(192, 192, 192, 0.4);
     }
 
     .brand-tagline {
       font-size: 0.9rem;
+      color: var(--accent-silver);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline::before {
+      content: "●";
+      font-size: 0.6rem;
       color: var(--accent-silver);
     }
 
@@ -103,13 +115,36 @@
       background-color: var(--bg-section);
       border-radius: var(--border-radius);
       padding: 1.75rem 1.5rem;
-      border: 1px solid rgba(192, 192, 192, 0.15);
+      border: 1px solid rgba(192, 192, 192, 0.18);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    section + section {
+      margin-top: 2.75rem;
+    }
+
+    section + section::before {
+      content: "";
+      position: absolute;
+      top: -1.4rem;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(192, 192, 192, 0.6),
+        transparent
+      );
     }
 
     section h1,
     section h2 {
       margin-bottom: 0.75rem;
       color: var(--heading-light);
+      border-bottom: 1px solid rgba(192, 192, 192, 0.4);
+      padding-bottom: 0.35rem;
     }
 
     section p {
@@ -119,6 +154,7 @@
 
     .hero {
       text-align: left;
+      background: radial-gradient(circle at top left, #0f2945, #020814);
     }
 
     .hero h1 {
@@ -137,25 +173,28 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
+      align-items: center;
     }
 
     .btn-primary {
       display: inline-block;
       padding: 0.7rem 1.4rem;
       border-radius: 999px;
-      background-color: var(--accent-green);
+      background-image: linear-gradient(135deg, #2ecc71, #0fb97d);
       color: #021018;
       text-decoration: none;
       font-weight: bold;
-      border: 1px solid var(--accent-green);
+      border: 1px solid var(--accent-green-deep);
       font-size: 0.95rem;
       text-align: center;
-      transition: background-color 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 0 14px rgba(46, 204, 113, 0.6);
+      transition: background-image 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
     }
 
     .btn-primary:hover {
-      background-color: #27b864;
+      background-image: linear-gradient(135deg, #3ae98a, #1ad08b);
       transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(46, 204, 113, 0.85);
     }
 
     .btn-outline {
@@ -168,27 +207,34 @@
       font-size: 0.9rem;
       border: 1px solid var(--accent-green);
       text-align: center;
-      transition: background-color 0.2s ease, color 0.2s ease;
+      transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn-outline:hover {
       background-color: var(--accent-green);
       color: #021018;
+      box-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
+    }
+
+    .quote-microcopy {
+      font-size: 0.8rem;
+      color: var(--accent-silver);
     }
 
     .tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
     }
 
     .tag {
       font-size: 0.8rem;
       color: var(--accent-silver);
-      border: 1px solid rgba(192, 192, 192, 0.4);
-      padding: 0.2rem 0.5rem;
+      border: 1px solid rgba(192, 192, 192, 0.55);
+      padding: 0.2rem 0.55rem;
       border-radius: 999px;
+      background-color: rgba(4, 15, 31, 0.9);
     }
 
     .services-list {
@@ -204,10 +250,11 @@
     }
 
     .services-list li::before {
-      content: "•";
+      content: "◆";
       position: absolute;
       left: 0;
-      top: 0;
+      top: 0.1rem;
+      font-size: 0.6rem;
       color: var(--accent-green);
     }
 
@@ -226,7 +273,8 @@
       padding: 1.25rem 1rem;
       border-radius: var(--border-radius);
       border: 1px solid var(--accent-green);
-      background-color: #040f1f;
+      background: radial-gradient(circle at top left, #0f2945, #040f1f);
+      box-shadow: 0 0 16px rgba(46, 204, 113, 0.35);
     }
 
     .contact-phone {
@@ -238,6 +286,12 @@
     .contact-phone a {
       text-decoration: none;
       color: var(--accent-green);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-phone a:hover {
+      border-bottom-color: var(--accent-green);
     }
 
     .contact-email {
@@ -248,6 +302,13 @@
     .contact-email a {
       text-decoration: none;
       color: var(--heading-light);
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .contact-email a:hover {
+      color: var(--accent-green);
+      border-bottom-color: var(--accent-green);
     }
 
     .contact-details {
@@ -276,6 +337,12 @@
       color: var(--text-muted);
       font-size: 0.85rem;
       text-align: center;
+    }
+
+    footer p + p {
+      margin-top: 0.3rem;
+      color: var(--accent-silver);
+      font-size: 0.82rem;
     }
 
     @media (max-width: 700px) {
@@ -328,6 +395,7 @@
       <div class="hero-cta">
         <a href="mailto:ttravellogisticsllc@gmail.com?subject=Quote%20Request%20for%20Delivery" class="btn-primary">Quote Request</a>
         <a href="#services" class="btn-outline">View delivery services</a>
+        <span class="quote-microcopy">Fast response for time sensitive freight.</span>
       </div>
       <div class="tag-row">
         <span class="tag">Green Bay delivery services</span>
@@ -418,6 +486,7 @@
         </p>
         <div class="hero-cta">
           <a href="mailto:ttravellogisticsllc@gmail.com?subject=Quote%20Request%20for%20Delivery" class="btn-primary">Quote Request</a>
+          <span class="quote-microcopy">Quotes answered as quickly as possible.</span>
         </div>
       </div>
     </section>
@@ -426,6 +495,9 @@
   <footer>
     <p>
       TTravel Logistics LLC | cargo van delivery Green Bay | same day delivery Green Bay and hot shot courier Wisconsin for shippers in Green Bay Wisconsin and across the Midwest
+    </p>
+    <p>
+      Independent cargo van carrier providing local delivery service Green Bay and regional support across Wisconsin and the Midwest.
     </p>
   </footer>
 </body>
