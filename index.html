@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TTravel Logistics LLC | Kansas City Cargo Van Delivery</title>
 
-  <meta name="description" content="TTravel Logistics LLC provides same day cargo van delivery and local logistics support for small businesses in Kansas City, Missouri and the surrounding Kansas City metro area. Reliable backup delivery help for parts runs, job site drop offs, overflow routes, and urgent freight support.">
-  <meta name="keywords" content="cargo van delivery Kansas City, same day delivery Kansas City, local delivery Kansas City MO, cargo van delivery near me, Kansas City logistics support, parts runs Kansas City, job site drop offs Kansas City, overflow delivery routes Kansas City, urgent freight support Kansas City, HVAC parts delivery Kansas City, plumbing supply delivery Kansas City, electrical supply delivery Kansas City, auto parts delivery Kansas City, construction material delivery Kansas City, industrial supply delivery Kansas City, janitorial supply delivery Kansas City, paint supply delivery Kansas City, appliance parts delivery Kansas City, machine shop deliveries Kansas City, small business delivery Kansas City, pet related delivery Kansas City">
+  <meta name="description" content="TTravel Logistics LLC provides same day cargo van delivery and backup local logistics support for Kansas City businesses. Call for parts runs, job site drop offs, overflow delivery routes, urgent freight support, and local business deliveries in the Kansas City metro area.">
+  <meta name="keywords" content="cargo van delivery Kansas City, same day delivery Kansas City, local delivery Kansas City MO, Kansas City logistics support, backup delivery Kansas City, parts runs Kansas City, job site drop offs Kansas City, overflow delivery routes Kansas City, urgent freight support Kansas City, HVAC parts delivery Kansas City, plumbing supply delivery Kansas City, electrical supply delivery Kansas City, auto parts delivery Kansas City, construction material delivery Kansas City, industrial supply delivery Kansas City, janitorial supply delivery Kansas City, paint supply delivery Kansas City, appliance parts delivery Kansas City, machine shop deliveries Kansas City, small business delivery Kansas City, pet related delivery Kansas City">
 
   <style>
     :root {
       --bg-main: #020814;
       --bg-section: #071726;
       --bg-header: #050f1f;
+      --bg-card: #0a1c2f;
       --accent-green: #2ecc71;
       --accent-green-deep: #1e8f4d;
       --accent-silver: #c0c0c0;
@@ -21,13 +22,17 @@
       --text-muted: #b0c4de;
       --heading-light: #e0f0ff;
       --max-width: 1100px;
-      --border-radius: 8px;
+      --border-radius: 10px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -53,6 +58,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1rem;
     }
 
     .brand {
@@ -86,7 +92,8 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -155,18 +162,26 @@
 
     .hero {
       text-align: left;
-      background: radial-gradient(circle at top left, #0f2945, #020814);
+      background: radial-gradient(circle at top left, #12365c, #020814);
+      padding: 2.2rem 1.5rem;
     }
 
     .hero h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.35rem;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      max-width: 850px;
     }
 
     .hero-subtitle {
-      font-size: 1.05rem;
+      font-size: 1.12rem;
       color: var(--text-muted);
       margin-bottom: 1rem;
+      max-width: 900px;
+    }
+
+    .hero strong {
+      color: var(--heading-light);
     }
 
     .hero-cta {
@@ -218,7 +233,7 @@
     }
 
     .quote-microcopy {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--accent-silver);
     }
 
@@ -226,16 +241,75 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.8rem;
+      margin-top: 1rem;
     }
 
     .tag {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--accent-silver);
       border: 1px solid rgba(192, 192, 192, 0.55);
       padding: 0.2rem 0.55rem;
       border-radius: 999px;
       background-color: rgba(4, 15, 31, 0.9);
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.3rem;
+    }
+
+    .trust-item {
+      background-color: rgba(5, 15, 31, 0.85);
+      border: 1px solid rgba(192, 192, 192, 0.22);
+      border-radius: var(--border-radius);
+      padding: 1rem;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--accent-green);
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .trust-item span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .intro-line {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 900px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid rgba(192, 192, 192, 0.18);
+      border-radius: var(--border-radius);
+      padding: 1.1rem;
+      min-height: 100%;
+    }
+
+    .card h3 {
+      color: var(--heading-light);
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0;
     }
 
     .services-list {
@@ -244,7 +318,7 @@
     }
 
     .services-list li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
       padding-left: 1.2rem;
       position: relative;
       color: var(--text-main);
@@ -259,6 +333,61 @@
       color: var(--accent-green);
     }
 
+    .call-list {
+      list-style: none;
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .call-list li {
+      background-color: var(--bg-card);
+      border-left: 4px solid var(--accent-green);
+      border-radius: var(--border-radius);
+      padding: 0.85rem;
+      color: var(--text-main);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .step {
+      background-color: var(--bg-card);
+      border: 1px solid rgba(46, 204, 113, 0.28);
+      border-radius: var(--border-radius);
+      padding: 1rem;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: var(--accent-green);
+      color: #021018;
+      font-weight: bold;
+      margin-bottom: 0.6rem;
+    }
+
+    .step h3 {
+      color: var(--heading-light);
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .step p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
     .key-line {
       margin-top: 1rem;
       font-weight: bold;
@@ -267,6 +396,16 @@
 
     .about-text p {
       margin-bottom: 0.85rem;
+    }
+
+    .notice-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      border: 1px solid rgba(46, 204, 113, 0.55);
+      background-color: rgba(46, 204, 113, 0.08);
+      color: var(--heading-light);
+      font-weight: bold;
     }
 
     .contact-highlight {
@@ -279,7 +418,7 @@
     }
 
     .contact-phone {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: bold;
       margin-bottom: 0.3rem;
     }
@@ -346,6 +485,18 @@
       font-size: 0.82rem;
     }
 
+    @media (max-width: 900px) {
+      .trust-strip,
+      .grid,
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
     @media (max-width: 700px) {
       .nav-container {
         flex-direction: column;
@@ -360,7 +511,22 @@
       }
 
       .hero h1 {
-        font-size: 1.6rem;
+        font-size: 1.65rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .trust-strip,
+      .grid,
+      .steps,
+      .call-list {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-name {
+        font-size: 1.15rem;
       }
     }
   </style>
@@ -373,11 +539,12 @@
         <span class="brand-name">TTravel Logistics LLC</span>
         <span class="brand-tagline">Reliability one mile at a time</span>
       </div>
-      <nav>
+      <nav aria-label="Main navigation">
         <ul>
           <li><a href="#home">Home</a></li>
+          <li><a href="#who-we-help">Who We Help</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#when-to-call">When to Call</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -385,124 +552,185 @@
   </header>
 
   <main>
-    <!-- Home -->
     <section id="home" class="hero">
-      <h1>Kansas City cargo van delivery when your team needs backup</h1>
+      <h1>Kansas City cargo van delivery when your team needs backup today</h1>
       <p class="hero-subtitle">
-        TTravel Logistics LLC provides same day cargo van delivery and local logistics support for small businesses in Kansas City, Missouri and the surrounding Kansas City metro area.
+        TTravel Logistics LLC provides same day cargo van delivery and local logistics support for small businesses in Kansas City, Missouri and the surrounding metro area.
       </p>
       <p>
-        We help when something needs to move today and your regular team needs extra support. We are not trying to replace your current drivers. We are here to be a reliable backup delivery option for parts runs, job site drop offs, overflow routes, and urgent freight support.
+        We are not here to replace your current drivers. We are here when your driver is booked, your route is overloaded, a job site is waiting, or something needs to move today.
       </p>
-      <div class="hero-cta">
-        <a href="mailto:ttravellogisticsllc@gmail.com?subject=Quote%20Request%20for%20Delivery" class="btn-primary">Quote Request</a>
-        <a href="#services" class="btn-outline">View delivery services</a>
-        <span class="quote-microcopy">Fast response for time sensitive delivery needs.</span>
-      </div>
-      <div class="tag-row">
-        <span class="tag">Kansas City delivery support</span>
-        <span class="tag">Same day delivery</span>
-        <span class="tag">Cargo van delivery</span>
-        <span class="tag">Local business logistics</span>
-      </div>
-    </section>
+      <p>
+        If you need a reliable backup delivery option for parts runs, job site drop offs, overflow routes, or urgent freight support, call or text TTravel Logistics LLC.
+      </p>
 
 ```
-<!-- Services -->
-<section id="services">
-  <h2>Services</h2>
-  <p>
-    We focus on practical cargo van delivery for businesses that need dependable local delivery help in and around Kansas City. Our service is built for small businesses, suppliers, contractors, shops, and operations teams that need freight moved without making it complicated.
-  </p>
-  <ul class="services-list">
-    <li>
-      <strong>Same day delivery</strong> for local businesses that need items picked up and delivered quickly.
-    </li>
-    <li>
-      <strong>Cargo van delivery</strong> for freight that fits better in a van than a full size truck.
-    </li>
-    <li>
-      <strong>Parts runs</strong> for shops, suppliers, service teams, and field technicians.
-    </li>
-    <li>
-      <strong>Job site drop offs</strong> for contractors, construction teams, and crews that need materials delivered to the site.
-    </li>
-    <li>
-      <strong>Overflow delivery routes</strong> when your current drivers are booked, short staffed, or need backup support.
-    </li>
-    <li>
-      <strong>Local business deliveries</strong> for stores, warehouses, vendors, suppliers, and repeat customers.
-    </li>
-    <li>
-      <strong>Urgent freight support</strong> when a shipment cannot sit on the dock and needs to move today.
-    </li>
-    <li>
-      <strong>HVAC parts delivery</strong> for parts houses, service companies, and repair teams.
-    </li>
-    <li>
-      <strong>Plumbing supply delivery</strong> for supply houses, contractors, and job site needs.
-    </li>
-    <li>
-      <strong>Electrical supply delivery</strong> for electrical suppliers, contractors, and service calls.
-    </li>
-    <li>
-      <strong>Auto parts delivery</strong> for auto shops, dealerships, parts stores, and service centers.
-    </li>
-    <li>
-      <strong>Construction material delivery</strong> for smaller loads, tools, supplies, and job site materials.
-    </li>
-    <li>
-      <strong>Industrial supply delivery</strong> for warehouses, plants, shops, and maintenance teams.
-    </li>
-    <li>
-      <strong>Janitorial supply delivery</strong> for cleaning supply companies, offices, facilities, and commercial accounts.
-    </li>
-    <li>
-      <strong>Paint supply delivery</strong> for paint stores, contractors, property teams, and job sites.
-    </li>
-    <li>
-      <strong>Appliance parts delivery</strong> for repair companies, parts suppliers, and service technicians.
-    </li>
-    <li>
-      <strong>Machine shop deliveries</strong> for parts, materials, tools, and local shop support.
-    </li>
-    <li>
-      <strong>Pet related delivery</strong> for pet businesses, veterinary support needs, pet supplies, and pet related local deliveries.
-    </li>
-  </ul>
-  <p class="key-line">
-    TTravel Logistics LLC does not market itself as a human medical courier service.
-  </p>
-  <p class="key-line">
-    Our commercially insured 2024 Ram Promaster 2500 cargo van has a payload capacity around three thousand pounds.
-  </p>
-  <p class="key-line">
-    Contact us for a custom quote based on mileage, load size, urgency, pickup location, and delivery needs.
-  </p>
+  <div class="hero-cta">
+    <a href="tel:13129856760" class="btn-primary">Call or Text 312 985 6760</a>
+    <a href="mailto:ttravellogisticsllc@gmail.com?subject=Quote%20Request%20for%20Delivery" class="btn-outline">Request a Quote</a>
+    <span class="quote-microcopy">Fast response for time sensitive delivery needs.</span>
+  </div>
+
+  <div class="tag-row">
+    <span class="tag">Same day delivery</span>
+    <span class="tag">Cargo van delivery</span>
+    <span class="tag">Parts runs</span>
+    <span class="tag">Job site drop offs</span>
+    <span class="tag">Overflow route support</span>
+  </div>
+
+  <div class="trust-strip">
+    <div class="trust-item">
+      <strong>Commercially Insured</strong>
+      <span>Professional cargo van delivery support for local businesses.</span>
+    </div>
+    <div class="trust-item">
+      <strong>2024 Ram Promaster 2500</strong>
+      <span>Clean cargo van ready for local business freight and supply runs.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Around 3,000 lb Payload</strong>
+      <span>Built for parts, supplies, materials, and smaller freight.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Kansas City Metro</strong>
+      <span>Serving Kansas City, Missouri and surrounding metro areas.</span>
+    </div>
+  </div>
 </section>
 
-<!-- About Us -->
+<section id="who-we-help">
+  <h2>Who We Help</h2>
+  <p class="intro-line">
+    We help Kansas City businesses that need delivery support without hiring another driver or slowing down their day.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Trade and Supply Companies</h3>
+      <p>HVAC parts houses, plumbing suppliers, electrical suppliers, paint suppliers, janitorial suppliers, and industrial supply companies.</p>
+    </div>
+    <div class="card">
+      <h3>Shops and Service Teams</h3>
+      <p>Auto parts stores, repair shops, appliance parts suppliers, machine shops, and mobile service teams that need parts moved quickly.</p>
+    </div>
+    <div class="card">
+      <h3>Contractors and Job Sites</h3>
+      <p>Construction crews, contractors, maintenance teams, and field workers that need tools, supplies, or materials delivered to the job site.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Delivery Services</h2>
+  <p class="intro-line">
+    Our services are built around one simple idea. When something needs to move today, your business should have a dependable backup option.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Parts and Supply Runs</h3>
+      <ul class="services-list">
+        <li>HVAC parts delivery</li>
+        <li>Plumbing supply delivery</li>
+        <li>Electrical supply delivery</li>
+        <li>Auto parts delivery</li>
+        <li>Appliance parts delivery</li>
+        <li>Industrial supply delivery</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Job Site and Business Deliveries</h3>
+      <ul class="services-list">
+        <li>Job site drop offs</li>
+        <li>Construction material delivery</li>
+        <li>Paint supply delivery</li>
+        <li>Janitorial supply delivery</li>
+        <li>Local business deliveries</li>
+        <li>Pet related delivery</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Backup Route Support</h3>
+      <ul class="services-list">
+        <li>Same day delivery</li>
+        <li>Cargo van delivery</li>
+        <li>Parts runs</li>
+        <li>Overflow delivery routes</li>
+        <li>Urgent freight support</li>
+        <li>Machine shop deliveries</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notice-box">
+    TTravel Logistics LLC does not market itself as a human medical courier service.
+  </div>
+</section>
+
+<section id="when-to-call">
+  <h2>When to Call TTravel Logistics LLC</h2>
+  <p class="intro-line">
+    Call us when the freight is too important to sit and your team needs extra delivery help.
+  </p>
+
+  <ul class="call-list">
+    <li>Your regular driver is already booked.</li>
+    <li>A customer needs something delivered today.</li>
+    <li>A job site is waiting on a part or supply order.</li>
+    <li>Your route is overloaded and needs backup.</li>
+    <li>Your team is short staffed and the freight still has to move.</li>
+    <li>You need a local cargo van without adding another employee.</li>
+  </ul>
+</section>
+
+<section id="how-it-works">
+  <h2>How It Works</h2>
+  <p class="intro-line">
+    Simple delivery support should not feel complicated. Here is the basic process.
+  </p>
+
+  <div class="steps">
+    <div class="step">
+      <span class="step-number">1</span>
+      <h3>Call or Send Details</h3>
+      <p>Tell us what needs to move, where it is, where it is going, and how soon it needs to arrive.</p>
+    </div>
+    <div class="step">
+      <span class="step-number">2</span>
+      <h3>Get a Clear Quote</h3>
+      <p>We provide a quote based on mileage, load size, timing, pickup location, and delivery needs.</p>
+    </div>
+    <div class="step">
+      <span class="step-number">3</span>
+      <h3>We Move the Load</h3>
+      <p>Your delivery is handled with clear communication from pickup to drop off.</p>
+    </div>
+  </div>
+</section>
+
 <section id="about">
-  <h2>About Us</h2>
+  <h2>About TTravel Logistics LLC</h2>
   <div class="about-text">
     <p>
       TTravel Logistics LLC is an independent cargo van delivery business serving Kansas City, Missouri and the surrounding Kansas City metro area.
     </p>
     <p>
-      We work with small businesses that need reliable delivery help without a lot of extra steps. Sometimes your regular driver is already out. Sometimes the route is full. Sometimes a customer needs an item today. That is where we fit in.
+      We are built for small businesses that need backup delivery support they can actually reach. No complicated process. No overpromising. Just clear communication, dependable service, and freight handled with care.
     </p>
     <p>
-      Our goal is simple. We want to be the backup delivery option your team can call when something needs to move and you need extra hands on the road.
+      Our role is simple. We help your business keep moving when your regular delivery plan needs extra support.
     </p>
     <p>
-      We believe good delivery support should be clear, professional, and easy to work with. You get honest communication, careful handling, and local support from a business that understands time matters.
+      Whether you are a parts manager, shop owner, contractor, supplier, dispatcher, or small business owner, you get the same promise. We will be clear, professional, and honest about what we can do.
     </p>
   </div>
 </section>
 
-<!-- Contact -->
 <section id="contact">
-  <h2>Contact</h2>
+  <h2>Need Something Moved Today?</h2>
 
   <div class="contact-highlight">
     <p class="contact-phone">
@@ -524,10 +752,11 @@
       Standard hours: 7 am to 5 pm Central, with availability for urgent loads outside regular hours.
     </p>
     <p class="contact-quote">
-      Need backup delivery help today? Contact us for a quote.
+      Send pickup location, drop off location, item details, and timing for the fastest quote.
     </p>
     <div class="hero-cta">
-      <a href="mailto:ttravellogisticsllc@gmail.com?subject=Quote%20Request%20for%20Delivery" class="btn-primary">Quote Request</a>
+      <a href="tel:13129856760" class="btn-primary">Call or Text Now</a>
+      <a href="mailto:ttravellogisticsllc@gmail.com?subject=Quote%20Request%20for%20Delivery" class="btn-outline">Email Quote Request</a>
       <span class="quote-microcopy">Quotes answered as quickly as possible.</span>
     </div>
   </div>
